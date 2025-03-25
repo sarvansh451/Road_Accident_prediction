@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Classifier Evaluation Tables</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f7f7f7;
+    }
+    .container {
+      width: 90%;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    header {
+      background: #007BFF;
+      color: #fff;
+      padding: 10px 20px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .nav {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #007BFF;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: background 0.3s, color 0.3s;
+    }
+    .nav a:hover {
+      background: #007BFF;
+      color: #fff;
+    }
+    h2 {
+      color: #333;
+      border-bottom: 2px solid #007BFF;
+      padding-bottom: 5px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    table th, table td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+    }
+    table th {
+      background-color: #007BFF;
+      color: #fff;
+    }
+    table tr:hover {
+      background-color: #f1f1f1;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Classifier Evaluation</h1>
+  </header>
+  
+  <div class="nav">
+    <a href="/">Home</a>
+    <a href="/predict">Predict</a>
+  </div>
+  
+  <div class="container">
+    <h2>Table 1: Baseline Performance</h2>
+    <div>{{ table1|safe }}</div>
+    
+    <h2>Table 2: Performance After Scaling</h2>
+    <div>{{ table2|safe }}</div>
+    
+    <h2>Table 3: GridSearchCV Results</h2>
+    <div>{{ table3|safe }}</div>
+    
+    <h2>Table 4: Performance After PCA (2 components)</h2>
+    <div>{{ table4|safe }}</div>
+  </div>
+</body>
+</html>
